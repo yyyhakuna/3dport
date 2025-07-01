@@ -1,6 +1,12 @@
 import React from "react";
 
-const Button = ({ text, className, id }) => {
+type ButtonProps = {
+  text?: string;
+  className?: string;
+  id?: string;
+};
+
+const Button = ({ text, className, id }: ButtonProps) => {
   return (
     <a
       onClick={(e) => {

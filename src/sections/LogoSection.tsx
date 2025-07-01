@@ -1,9 +1,9 @@
 import { logoIconsList } from "../constants";
 
-const LogoIcon = ({ icon }) => {
+const LogoIcon = ({ icon }: { icon: { name?: string; imgPath: string } }) => {
   return (
     <div className="flex-none flex-center marquee-item">
-      <img src={icon.imgPath} alt={icon.name} />
+      <img src={icon.imgPath} alt={icon.name || "Logo"} />
     </div>
   );
 };

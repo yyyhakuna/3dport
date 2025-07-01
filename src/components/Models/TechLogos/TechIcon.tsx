@@ -4,14 +4,15 @@ import { Canvas } from "@react-three/fiber";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import * as THREE from "three";
+import type { model } from "../../../constants/interface";
 
-export const TechIcon = ({ model }) => {
+export const TechIcon = ({ model }: { model: model }) => {
   const scene = useGLTF(model.modelPath);
 
   useEffect(() => {
     if (model.name === "Interactive Developer") {
       scene.scene.traverse((child) => {
-        if (child.isMesh) {
+        if (child instanceof THREE.Mesh) {
           if (child.name && child.name === "Object_5") {
             child.material = new THREE.MeshStandardMaterial({ color: "white" });
           }
@@ -30,7 +31,7 @@ export const TechIcon = ({ model }) => {
       }}
     >
       <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <directionalLight position={[5, 5, 5]} intensity={10} />
       <Environment preset="city" />
       <OrbitControls enableZoom={false} />
       <Float speed={5.5} rotationIntensity={0.5} floatIntensity={1}>
