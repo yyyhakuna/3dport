@@ -23,8 +23,7 @@ const TechStack = () => {
           trigger: "#skills",
           start: "top center",
           end: "bottom top",
-          scrub: true,
-        },
+        }
       }
     );
   });
