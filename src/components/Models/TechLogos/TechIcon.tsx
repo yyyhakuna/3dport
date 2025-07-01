@@ -4,9 +4,9 @@ import { Canvas } from "@react-three/fiber";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import * as THREE from "three";
-import type { model } from "../../../constants/interface";
+import type { Model } from "../../../constants/interface";
 
-export const TechIcon = ({ model }: { model: model }) => {
+export const TechIcon = ({ model }: { model: Model }) => {
   const scene = useGLTF(model.modelPath);
 
   useEffect(() => {
