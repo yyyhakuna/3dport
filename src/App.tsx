@@ -21,7 +21,7 @@ function App() {
    <TechStack/>
    <Testimonials/>
    <Contact/>
-   <Footer/>
+   <Footer />
    </>
   )
 }

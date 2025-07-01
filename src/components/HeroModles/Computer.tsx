@@ -6,9 +6,19 @@ Files: computer-optimized.glb [486.38KB] > F:\渡一教育\项目实战\3D Web D
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
 
-export default function Computer(props) {
-  const { nodes, materials } = useGLTF('/models/computer-optimized-transformed.glb')
+type GLTFResult = {
+  nodes: {
+    [key: string]: THREE.Mesh
+  }
+  materials: {
+    [key: string]: THREE.Material
+  }
+}
+
+export default function Computer(props: any) {
+  const { nodes, materials } = useGLTF('/models/computer-optimized-transformed.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[-4.005, 67.549, 58.539]}>
